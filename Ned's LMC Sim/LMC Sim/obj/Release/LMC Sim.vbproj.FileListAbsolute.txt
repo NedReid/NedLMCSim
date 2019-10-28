@@ -22,3 +22,15 @@ C:\Users\ned-r\source\repos\Ned's LMC Sim\LMC Sim\obj\Release\LMC Sim.vbproj.Cor
 C:\Users\ned-r\source\repos\Ned's LMC Sim\LMC Sim\obj\Release\LMC Sim.exe
 C:\Users\ned-r\source\repos\Ned's LMC Sim\LMC Sim\obj\Release\LMC Sim.xml
 C:\Users\ned-r\source\repos\Ned's LMC Sim\LMC Sim\obj\Release\LMC Sim.pdb
+C:\Users\alldocube\Downloads\NedLMCSim-master\NedLMCSim-master\Ned's LMC Sim\LMC Sim\bin\Release\LMC Sim.exe.config
+C:\Users\alldocube\Downloads\NedLMCSim-master\NedLMCSim-master\Ned's LMC Sim\LMC Sim\bin\Release\LMC Sim.exe
+C:\Users\alldocube\Downloads\NedLMCSim-master\NedLMCSim-master\Ned's LMC Sim\LMC Sim\bin\Release\LMC Sim.pdb
+C:\Users\alldocube\Downloads\NedLMCSim-master\NedLMCSim-master\Ned's LMC Sim\LMC Sim\bin\Release\LMC Sim.xml
+C:\Users\alldocube\Downloads\NedLMCSim-master\NedLMCSim-master\Ned's LMC Sim\LMC Sim\obj\Release\LMC Sim.vbprojAssemblyReference.cache
+C:\Users\alldocube\Downloads\NedLMCSim-master\NedLMCSim-master\Ned's LMC Sim\LMC Sim\obj\Release\LMC_Sim.LMCTester.resources
+C:\Users\alldocube\Downloads\NedLMCSim-master\NedLMCSim-master\Ned's LMC Sim\LMC Sim\obj\Release\LMC_Sim.Resources.resources
+C:\Users\alldocube\Downloads\NedLMCSim-master\NedLMCSim-master\Ned's LMC Sim\LMC Sim\obj\Release\LMC Sim.vbproj.GenerateResource.cache
+C:\Users\alldocube\Downloads\NedLMCSim-master\NedLMCSim-master\Ned's LMC Sim\LMC Sim\obj\Release\LMC Sim.vbproj.CoreCompileInputs.cache
+C:\Users\alldocube\Downloads\NedLMCSim-master\NedLMCSim-master\Ned's LMC Sim\LMC Sim\obj\Release\LMC Sim.exe
+C:\Users\alldocube\Downloads\NedLMCSim-master\NedLMCSim-master\Ned's LMC Sim\LMC Sim\obj\Release\LMC Sim.xml
+C:\Users\alldocube\Downloads\NedLMCSim-master\NedLMCSim-master\Ned's LMC Sim\LMC Sim\obj\Release\LMC Sim.pdb

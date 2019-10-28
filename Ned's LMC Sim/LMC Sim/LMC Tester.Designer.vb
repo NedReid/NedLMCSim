@@ -29,6 +29,7 @@ Partial Class LMCTester
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
         Label1 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
@@ -93,6 +94,10 @@ Partial Class LMCTester
         Me.TextBox2.Size = New System.Drawing.Size(760, 727)
         Me.TextBox2.TabIndex = 5
         '
+        'BackgroundWorker1
+        '
+        Me.BackgroundWorker1.WorkerReportsProgress = True
+        '
         'LMCTester
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
@@ -117,4 +122,5 @@ Partial Class LMCTester
     Friend WithEvents TextBox1 As Windows.Forms.TextBox
     Friend WithEvents Button2 As Windows.Forms.Button
     Friend WithEvents TextBox2 As Windows.Forms.TextBox
+    Friend WithEvents BackgroundWorker1 As ComponentModel.BackgroundWorker
 End Class

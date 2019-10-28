@@ -1,9 +1,7 @@
 ﻿'Welcome to NED'S LMC TESTER
 'There really isn't much too this. Prepare to be disappointed.
 Public Class LMCTester
-    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'Nothing happens here
-    End Sub
+
 
     Private Sub Label1_Click(sender As Object, e As EventArgs)
 
@@ -33,7 +31,37 @@ Public Class LMCTester
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        BackgroundWorker1.RunWorkerAsync()
 
+    End Sub
+
+    Private Sub Form1_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        ' Start up the BackgroundWorker1.
+
+    End Sub
+    Private Sub BackgroundWorker1_ProgressChanged(ByVal sender As System.Object,
+                                         ByVal e As System.ComponentModel.ProgressChangedEventArgs) _
+                                         Handles BackgroundWorker1.ProgressChanged
+        Select Case e.ProgressPercentage
+            Case <= 105
+                TextBox2.AppendText(e.UserState & Environment.NewLine)
+            Case 106
+                TextBox2.AppendText(Environment.NewLine)
+                TextBox2.AppendText(Environment.NewLine)
+                TextBox2.AppendText("Mean number of cycles was " & e.UserState & Environment.NewLine)
+            Case 107
+                TextBox2.AppendText("Longest run was " & CInt(e.UserState))
+            Case 108
+                TextBox2.AppendText(" at " & e.UserState & " cycles." & Environment.NewLine)
+            Case 109
+                TextBox2.AppendText("The program timed out on " & e.UserState & " different cycles." & Environment.NewLine)
+
+        End Select
+    End Sub
+    Private Sub BackgroundWorker1_DoWork(ByVal sender As System.Object,
+                                         ByVal e As System.ComponentModel.DoWorkEventArgs) _
+                                         Handles BackgroundWorker1.DoWork
+        ' Do some time-consuming work on this thread.
         Dim FILE_NAME As String = TextBox1.Text
 
         Dim TextLine As String = ""
@@ -77,6 +105,7 @@ Public Class LMCTester
             Dim Calc As Integer = 0
             Dim Cycles = 0
             Dim Counter As Integer = 0
+            Dim Out As String = ""
             Do Until Input(Counter) < 100
                 Dim a = Input(Counter)
 
@@ -99,8 +128,7 @@ Public Class LMCTester
                     Calc = inputNum
                     negative = False
                 ElseIf a = 902 Then
-                    TextBox2.AppendText(Calc & ",")
-
+                    Out = Out & (Calc & ",")
                 End If
                 If Calc >= 1000 Then
                     Calc = Calc Mod 1000
@@ -113,7 +141,7 @@ Public Class LMCTester
                 TCycles += 1
                 If Cycles > 100000 Then
                     fails += 1
-                    TextBox2.AppendText(Environment.NewLine & "FAILURE - TIMED OUT" & Environment.NewLine)
+                    Out = Out & (" -   FAILURE - TIMED OUT")
                     Exit Do
                 End If
             Loop
@@ -122,21 +150,21 @@ Public Class LMCTester
                 BCycle2 = inputNum
             End If
             '  Console.ReadLine()
-            TextBox2.AppendText(" - In " & Cycles & " Cycles" & Environment.NewLine)
+            Out = Out & (" - In " & Cycles & " Cycles")
 
             progress += 0.1
-            ProgressBar1.Value = CInt(progress)
+            BackgroundWorker1.ReportProgress(CInt(progress), Out)
+
         Next
-        TextBox2.AppendText(Environment.NewLine)
-        TextBox2.AppendText(Environment.NewLine)
-        TextBox2.AppendText("Mean number of cycles was " & CInt(TCycles / 1000) & Environment.NewLine)
-        TextBox2.AppendText("Longest run was " & CInt(BCycle2) & " at " & BCycle & " cycles." & Environment.NewLine)
+        BackgroundWorker1.ReportProgress(106, CInt(TCycles / 1000))
+
+        BackgroundWorker1.ReportProgress(107, BCycle2)
+
+        BackgroundWorker1.ReportProgress(108, BCycle)
         If fails > 0 Then
-            TextBox2.AppendText("The program timed out on " & fails & " different cycles." & Environment.NewLine)
+            BackgroundWorker1.ReportProgress(109, fails)
+
         End If
     End Sub
 
-    Private Sub ProgressBar1_Click(sender As Object, e As EventArgs) Handles ProgressBar1.Click
-
-    End Sub
 End Class
